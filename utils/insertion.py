@@ -1,5 +1,5 @@
 from .connections import connect_to_mongodb
-from .constants import *
+from common.constants import *
 from services import logger
 
 # Function to insert message into MongoDB

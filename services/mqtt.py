@@ -1,11 +1,5 @@
 import pika
-from utils import (
-    RABBITMQ_USERNAME,
-    RABBITMQ_PASSWORD,
-    RABBITMQ_HOST,
-    RABBITMQ_PORT,
-    RABBITMQ_VIRTUAL_HOST
-    )
+from common.constants import *
 from .logging import logger
 
 # Function to start the consumer

@@ -58,5 +58,21 @@ Follow these detailed steps to run the Python script:
    python main.py
    ```
 
+## Unit Tests
+
+This project includes unit tests to ensure the correctness and robustness of individual components and functions.
+
+## Test Cases and Results
+
+### Integration Test
+
+- **Test Case:** Verify seamless integration of MQTT message processing from RabbitMQ to MongoDB.
+- **Result:** Successful integration demonstrated by publishing a test message, processing it through the message handler, and storing it in MongoDB.
+
+### Manual Test
+- First, run the publisher.py script to publish the message.
+- Then, execute the main.py script to retrieve and store the messages.
+- Finally, run the retrieve_data.py script to retrieve stored data.
+
 ## Author
 Ganesh Chavan

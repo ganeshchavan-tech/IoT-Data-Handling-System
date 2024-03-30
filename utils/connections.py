@@ -1,5 +1,5 @@
 import pymongo
-from .constants import *
+from common.constants import *
 from services.logging import logger
 
 def connect_to_mongodb(database_name, collection_name):
