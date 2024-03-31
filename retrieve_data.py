@@ -1,4 +1,4 @@
-from utils.connections import connect_to_mongodb
+from utils.db import connect_to_mongodb
 from services import logger
 from common.constants import *
 

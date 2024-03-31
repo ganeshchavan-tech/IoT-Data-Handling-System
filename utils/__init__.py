@@ -1,2 +1,2 @@
-from .connections import *
+from .db import *
 from .insertion import *

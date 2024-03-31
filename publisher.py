@@ -1,17 +1,19 @@
 import pika
 from common.constants import *
+from services import connect_to_rabbitmq
 
 def publish_message(topic, payload):
     try:
-        credentials = pika.PlainCredentials(RABBITMQ_USERNAME, RABBITMQ_PASSWORD)
-        parameters = pika.ConnectionParameters(RABBITMQ_HOST, RABBITMQ_PORT, '/', credentials)
-        connection = pika.BlockingConnection(parameters)
-        channel = connection.channel()
+        channel = connect_to_rabbitmq()
+
+        # Publish message
         channel.basic_publish(exchange='', routing_key=topic, body=payload)
-        connection.close()
+
         print(f"Published message to topic '{topic}': {payload}")
+    
     except Exception as e:
         print(f"Failed to publish message: {e}")
 
 
-# publish_message("test/topic", {"test_message" : "Hello, MQTT!"})
+if __name__ == "__main__":
+    publish_message(QUEUE_NAME, '{"test_message2": "Hello, MQTT!"}')
